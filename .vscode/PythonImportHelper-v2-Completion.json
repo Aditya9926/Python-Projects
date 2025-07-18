@@ -1,0 +1,155 @@
+[
+    {
+        "label": "PyPDF2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "PyPDF2",
+        "description": "PyPDF2",
+        "detail": "PyPDF2",
+        "documentation": {}
+    },
+    {
+        "label": "pyttsx3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyttsx3",
+        "description": "pyttsx3",
+        "detail": "pyttsx3",
+        "documentation": {}
+    },
+    {
+        "label": "speech_recognition",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "speech_recognition",
+        "description": "speech_recognition",
+        "detail": "speech_recognition",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "wikipedia",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "wikipedia",
+        "description": "wikipedia",
+        "detail": "wikipedia",
+        "documentation": {}
+    },
+    {
+        "label": "webbrowser",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "webbrowser",
+        "description": "webbrowser",
+        "detail": "webbrowser",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "pyjokes",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyjokes",
+        "description": "pyjokes",
+        "detail": "pyjokes",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "kind": 5,
+        "importPath": "Convert_PDF_File",
+        "description": "Convert_PDF_File",
+        "peekOfCode": "path = open('file.pdf', 'rb')\n# creating a PdfFileReader object\npdfReader = PyPDF2.PdfFileReader(path)\n# the page with which you want to start\n# this will read the page of 25th page.\nfrom_page = pdfReader.getPage(24)\n# extracting the text from the PDF\ntext = from_page.extractText()\n# reading the text\nspeak = pyttsx3.init()",
+        "detail": "Convert_PDF_File",
+        "documentation": {}
+    },
+    {
+        "label": "pdfReader",
+        "kind": 5,
+        "importPath": "Convert_PDF_File",
+        "description": "Convert_PDF_File",
+        "peekOfCode": "pdfReader = PyPDF2.PdfFileReader(path)\n# the page with which you want to start\n# this will read the page of 25th page.\nfrom_page = pdfReader.getPage(24)\n# extracting the text from the PDF\ntext = from_page.extractText()\n# reading the text\nspeak = pyttsx3.init()\nspeak.say(text)\nspeak.runAndWait()",
+        "detail": "Convert_PDF_File",
+        "documentation": {}
+    },
+    {
+        "label": "from_page",
+        "kind": 5,
+        "importPath": "Convert_PDF_File",
+        "description": "Convert_PDF_File",
+        "peekOfCode": "from_page = pdfReader.getPage(24)\n# extracting the text from the PDF\ntext = from_page.extractText()\n# reading the text\nspeak = pyttsx3.init()\nspeak.say(text)\nspeak.runAndWait()",
+        "detail": "Convert_PDF_File",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "kind": 5,
+        "importPath": "Convert_PDF_File",
+        "description": "Convert_PDF_File",
+        "peekOfCode": "text = from_page.extractText()\n# reading the text\nspeak = pyttsx3.init()\nspeak.say(text)\nspeak.runAndWait()",
+        "detail": "Convert_PDF_File",
+        "documentation": {}
+    },
+    {
+        "label": "speak",
+        "kind": 5,
+        "importPath": "Convert_PDF_File",
+        "description": "Convert_PDF_File",
+        "peekOfCode": "speak = pyttsx3.init()\nspeak.say(text)\nspeak.runAndWait()",
+        "detail": "Convert_PDF_File",
+        "documentation": {}
+    },
+    {
+        "label": "speak",
+        "kind": 2,
+        "importPath": "Voice_Assistant",
+        "description": "Voice_Assistant",
+        "peekOfCode": "def speak(text):\n    print(f\"Assistant: {text}\")\n    try:\n        engine = pyttsx3.init()\n        engine.say(text)\n        engine.runAndWait()\n    except:\n        print(\"Speech output not supported in Colab.\")\ndef wish_user():\n    hour = int(datetime.datetime.now().hour)",
+        "detail": "Voice_Assistant",
+        "documentation": {}
+    },
+    {
+        "label": "wish_user",
+        "kind": 2,
+        "importPath": "Voice_Assistant",
+        "description": "Voice_Assistant",
+        "peekOfCode": "def wish_user():\n    hour = int(datetime.datetime.now().hour)\n    if hour < 12:\n        speak(\"Good Morning!\")\n    elif hour < 18:\n        speak(\"Good Afternoon!\")\n    else:\n        speak(\"Good Evening!\")\n    speak(\"I am your voice assistant. How can I help you today?\")\ndef take_command():",
+        "detail": "Voice_Assistant",
+        "documentation": {}
+    },
+    {
+        "label": "take_command",
+        "kind": 2,
+        "importPath": "Voice_Assistant",
+        "description": "Voice_Assistant",
+        "peekOfCode": "def take_command():\n    return input(\"You (type your command): \").lower()\ndef run_assistant():\n    wish_user()\n    while True:\n        query = take_command()\n        if 'wikipedia' in query:\n            speak(\"Searching Wikipedia...\")\n            query = query.replace(\"wikipedia\", \"\")\n            try:",
+        "detail": "Voice_Assistant",
+        "documentation": {}
+    },
+    {
+        "label": "run_assistant",
+        "kind": 2,
+        "importPath": "Voice_Assistant",
+        "description": "Voice_Assistant",
+        "peekOfCode": "def run_assistant():\n    wish_user()\n    while True:\n        query = take_command()\n        if 'wikipedia' in query:\n            speak(\"Searching Wikipedia...\")\n            query = query.replace(\"wikipedia\", \"\")\n            try:\n                result = wikipedia.summary(query, sentences=2)\n                speak(\"According to Wikipedia:\")",
+        "detail": "Voice_Assistant",
+        "documentation": {}
+    }
+]
