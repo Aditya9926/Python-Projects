@@ -196,6 +196,60 @@
         "documentation": {}
     },
     {
+        "label": "onStart",
+        "kind": 2,
+        "importPath": "Python_Text_To_Speech",
+        "description": "Python_Text_To_Speech",
+        "peekOfCode": "def onStart():\n   print('starting')\ndef onWord(name, location, length):\n   print('word', name, location, length)\ndef onEnd(name, completed):\n   print('finishing', name, completed)\nengine = pyttsx3.init()\nengine.connect('started-utterance', onStart)\nengine.connect('started-word', onWord)\nengine.connect('finished-utterance', onEnd)",
+        "detail": "Python_Text_To_Speech",
+        "documentation": {}
+    },
+    {
+        "label": "onWord",
+        "kind": 2,
+        "importPath": "Python_Text_To_Speech",
+        "description": "Python_Text_To_Speech",
+        "peekOfCode": "def onWord(name, location, length):\n   print('word', name, location, length)\ndef onEnd(name, completed):\n   print('finishing', name, completed)\nengine = pyttsx3.init()\nengine.connect('started-utterance', onStart)\nengine.connect('started-word', onWord)\nengine.connect('finished-utterance', onEnd)\nsen = 'Geeks for geeks is a computer portal for Geeks'\nengine.say(sen)",
+        "detail": "Python_Text_To_Speech",
+        "documentation": {}
+    },
+    {
+        "label": "onEnd",
+        "kind": 2,
+        "importPath": "Python_Text_To_Speech",
+        "description": "Python_Text_To_Speech",
+        "peekOfCode": "def onEnd(name, completed):\n   print('finishing', name, completed)\nengine = pyttsx3.init()\nengine.connect('started-utterance', onStart)\nengine.connect('started-word', onWord)\nengine.connect('finished-utterance', onEnd)\nsen = 'Geeks for geeks is a computer portal for Geeks'\nengine.say(sen)\nengine.runAndWait()",
+        "detail": "Python_Text_To_Speech",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "kind": 5,
+        "importPath": "Python_Text_To_Speech",
+        "description": "Python_Text_To_Speech",
+        "peekOfCode": "engine = pyttsx3.init()\n# testing\nengine.say(\"My first code on text-to-speech\")\nengine.say(\"Thank you, Geeksforgeeks\")\nengine.runAndWait()\ndef onStart():\n   print('starting')\ndef onWord(name, location, length):\n   print('word', name, location, length)\ndef onEnd(name, completed):",
+        "detail": "Python_Text_To_Speech",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "kind": 5,
+        "importPath": "Python_Text_To_Speech",
+        "description": "Python_Text_To_Speech",
+        "peekOfCode": "engine = pyttsx3.init()\nengine.connect('started-utterance', onStart)\nengine.connect('started-word', onWord)\nengine.connect('finished-utterance', onEnd)\nsen = 'Geeks for geeks is a computer portal for Geeks'\nengine.say(sen)\nengine.runAndWait()",
+        "detail": "Python_Text_To_Speech",
+        "documentation": {}
+    },
+    {
+        "label": "sen",
+        "kind": 5,
+        "importPath": "Python_Text_To_Speech",
+        "description": "Python_Text_To_Speech",
+        "peekOfCode": "sen = 'Geeks for geeks is a computer portal for Geeks'\nengine.say(sen)\nengine.runAndWait()",
+        "detail": "Python_Text_To_Speech",
+        "documentation": {}
+    },
+    {
         "label": "recognizer",
         "kind": 5,
         "importPath": "Speech_Recognition_Using_Google_Speech_API",
